@@ -1,0 +1,516 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PromoNumber | Digital Promotion Platform</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+<!-- LIGHTBOX POPUP -->
+<div id="lightbox" class="lightbox">
+
+<span class="close">&times;</span>
+
+<img class="lightbox-content" id="lightbox-img">
+
+</div>
+<script>
+
+// GET ELEMENTS
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const images = document.querySelectorAll(".gallery-item img");
+const closeBtn = document.querySelector(".close");
+
+// OPEN IMAGE
+images.forEach(img => {
+img.addEventListener("click", () => {
+lightbox.style.display = "block";
+lightboxImg.src = img.src;
+});
+});
+
+// CLOSE BUTTON
+closeBtn.onclick = () => {
+lightbox.style.display = "none";
+};
+
+// CLOSE ON OUTSIDE CLICK
+lightbox.onclick = (e) => {
+if(e.target !== lightboxImg){
+lightbox.style.display = "none";
+}
+};
+// AUTO SLIDER
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function showSlide(){
+slides.forEach(slide => slide.classList.remove("active"));
+index++;
+if(index >= slides.length){ index = 0; }
+slides[index].classList.add("active");
+}
+
+setInterval(showSlide, 4000);
+</script>
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#f4f6fb;
+color:#333;
+line-height:1.6;
+}
+
+header{
+background:#111827;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+}
+
+header h2{
+margin:0;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:500;
+}
+
+.hero{
+height:85vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(135deg,#2563eb,#6366f1);
+color:white;
+padding:20px;
+}
+
+.hero h1{
+font-size:50px;
+margin-bottom:15px;
+}
+
+.hero p{
+max-width:700px;
+font-size:18px;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:12px 28px;
+background:#f59e0b;
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-weight:600;
+}
+
+section{
+padding:80px 60px;
+text-align:center;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.feature{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 6px 18px rgba(0,0,0,0.1);
+}
+
+.feature img{
+width:90px;
+margin-bottom:15px;
+}
+
+.steps{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.step{
+background:white;
+padding:25px;
+width:220px;
+border-radius:10px;
+box-shadow:0 6px 15px rgba(0,0,0,0.1);
+}
+
+.image-section img{
+width:80%;
+border-radius:10px;
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+.about{
+max-width:900px;
+margin:auto;
+font-size:18px;
+}
+
+.contact{
+background:#1f2937;
+color:white;
+padding:60px 20px;
+}
+
+footer{
+background:#020617;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h2>PromoNumber</h2>
+
+<nav>
+
+<a href="#home">Home</a>
+<a href="#features">Features</a>
+<a href="#steps">How It Works</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+</header>
+
+<section class="hero" id="home">
+<img src="8.jpg">
+<h1>Smart Promotions for Modern Businesses</h1>
+
+<p>
+
+PromoNumber is a simple digital platform that connects businesses and customers
+through promotional commissions. Shops can attract customers with promotions,
+while customers earn promo numbers and benefits when they shop at participating
+businesses.
+
+</p>
+
+<a class="btn" href="https://varueng.pythonanywhere.com" target="_blank">
+Register Your Business
+</a>
+
+</section>
+<section class="promo-slider">
+
+<div class="slides">
+
+<div class="slide active">
+<img src="1.jpg">
+<div class="slide-text">
+<span class="badge hot">HOT</span>
+<h2>Mega Sale</h2>
+<p>Up to 50% OFF this week</p>
+</div>
+</div>
+
+<div class="slide">
+<img src="4.jpg">
+<div class="slide-text">
+<span class="badge new">NEW</span>
+<h2>Electronics Deals</h2>
+<p>Best prices in town</p>
+</div>
+</div>
+
+<div class="slide">
+<img src="2.jpg">
+<div class="slide-text">
+<span class="badge hot">HOT</span>
+<h2>Fashion Week</h2>
+<p>Buy 1 Get 1 Free</p>
+</div>
+</div>
+
+</div>
+
+</section>
+<section id="features">
+
+<h2>Why Businesses Choose PromoNumber</h2>
+
+<div class="features">
+
+<div class="feature">
+
+<img src="3.jpg">
+
+<h3>Business Promotion</h3>
+
+<p>
+
+Businesses can promote their products and services by offering promotional
+commissions to customers, increasing visibility and customer engagement.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<img src="6.jpg">
+
+<h3>Customer Rewards</h3>
+
+<p>
+
+Customers receive promo numbers when shopping at registered businesses,
+allowing them to benefit from promotions and rewards.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png">
+
+<h3>Simple Dashboard</h3>
+
+<p>
+
+Business owners can easily manage promotions, assign promo numbers,
+and track activity through a simple and user-friendly dashboard.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<img src="https://cdn-icons-png.flaticon.com/512/942/942748.png">
+
+<h3>Promotion Reports</h3>
+
+<p>
+
+PromoNumber provides reports that help businesses understand
+the effectiveness of their promotional campaigns.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>How PromoNumber Works</h2>
+
+<div class="steps">
+
+<div class="step">
+
+<h3>1</h3>
+
+<p>
+Businesses register their shop on the PromoNumber platform.
+</p>
+
+</div>
+
+<div class="step">
+
+<h3>2</h3>
+
+<p>
+Customers register to participate in promotional programs.
+</p>
+
+</div>
+
+<div class="step">
+
+<h3>3</h3>
+
+<p>
+Customers shop at participating businesses.
+</p>
+
+</div>
+
+<div class="step">
+
+<h3>4</h3>
+
+<p>
+Businesses assign promo numbers as promotional commissions.
+</p>
+
+</div>
+
+<div class="step">
+
+<h3>5</h3>
+
+<p>
+Customers accumulate rewards and businesses gain loyal customers.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="image-section">
+
+<h2>PromoNumber Digital Platform</h2>
+
+<p>
+A modern dashboard allows businesses to manage promotions easily.
+</p>
+
+<img src="6.jpg">
+
+</section>
+
+<section class="gallery">
+
+<h2>Latest Promotions</h2>
+<p>Explore exciting promotions and special offers from our partner businesses.</p>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+<img src="7.jpg">
+<div class="overlay">
+<h3>Super Sale</h3>
+<p>Up to 50% OFF</p>
+</div>
+</div>
+
+<div class="gallery-item">
+<img src="5.jpg">
+<div class="overlay">
+<h3>Electronics Deals</h3>
+<p>Best Prices Guaranteed</p>
+</div>
+</div>
+
+<div class="gallery-item">
+<img src="4.jpg">
+<div class="overlay">
+<h3>Fashion Offer</h3>
+<p>Buy 1 Get 1 Free</p>
+</div>
+</div>
+
+<div class="gallery-item">
+<img src="3.jpg">
+<div class="overlay">
+<h3>Restaurant Promo</h3>
+<p>Free Dessert Offer</p>
+</div>
+</div>
+
+<div class="gallery-item">
+<img src="3.jpg">
+<div class="overlay">
+<h3>Weekend Deal</h3>
+<p>Special Discounts</p>
+</div>
+</div>
+
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1607082349566-8d1e6c9e1b3d">
+<div class="overlay">
+<h3>New Arrivals</h3>
+<p>Latest Products</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2>About PromoNumber</h2>
+
+<div class="about">
+
+<p>
+
+PromoNumber is designed to simplify promotional marketing for businesses
+while rewarding customers for their purchases. By connecting businesses
+and customers through a digital promotion platform, PromoNumber helps
+create stronger customer relationships and better business growth.
+
+</p>
+
+<p>
+
+Whether you run a retail store, service business, or small enterprise,
+PromoNumber provides a modern way to manage promotions and attract
+more customers.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2>Start Promoting Your Business Today</h2>
+
+<p>
+
+Join PromoNumber and connect your business with customers through
+powerful promotional campaigns.
+
+</p>
+
+<p>
+
+Email: info@promonumber.lk  
+Phone: +94 XX XXX XXXX
+
+</p>
+
+</section>
+
+<footer>
+
+<p>© 2026 PromoNumber | Digital Promotion Platform</p>
+
+</footer>
+
+</body>
+</html>
